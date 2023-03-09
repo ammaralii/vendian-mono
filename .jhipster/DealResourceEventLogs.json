@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173159",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_resource_event_logs",
+  "fields": [
+    {
+      "fieldName": "comments",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealResourceEventLogs",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dealRequirementMatchingResources",
+      "otherEntityRelationshipName": "dealresourceeventlogsMatchingresource",
+      "relationshipName": "matchingresource",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "systemKey",
+      "otherEntityName": "dealResourceStatus",
+      "otherEntityRelationshipName": "dealresourceeventlogsResourcestatus",
+      "relationshipName": "resourcestatus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "systemKey",
+      "otherEntityName": "dealResourceStatus",
+      "otherEntityRelationshipName": "dealresourceeventlogsSystemstatus",
+      "relationshipName": "systemstatus",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity RatingAttributeMappings.
+    -->
+    <changeSet id="20230309173334-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="attribute_id"
+                                 baseTableName="rating_attribute_mappings"
+                                 constraintName="fk_rating_attribute_mappings__attribute_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="attributes"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_attribute_id"
+                                 baseTableName="rating_attribute_mappings"
+                                 constraintName="fk_rating_attribute_mappings__rating_attribute_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pc_rating_attributes"/>
+    </changeSet>
+</databaseChangeLog>

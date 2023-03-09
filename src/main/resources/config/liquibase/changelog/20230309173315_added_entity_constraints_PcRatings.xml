@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity PcRatings.
+    -->
+    <changeSet id="20230309173315-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="pc_ratings"
+                                 constraintName="fk_pc_ratings__status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pc_statuses"/>
+
+        <addForeignKeyConstraint baseColumnNames="pcemployeerating_id"
+                                 baseTableName="pc_ratings"
+                                 constraintName="fk_pc_ratings__pcemployeerating_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="performance_cycle_employee_rating"/>
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="pc_ratings"
+                                 constraintName="fk_pc_ratings__employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+    </changeSet>
+</databaseChangeLog>

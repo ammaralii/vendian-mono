@@ -1,0 +1,74 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173158",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_requirements",
+  "fields": [
+    {
+      "fieldName": "dealreqidentifier",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "competencyname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "skills",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resourcerequired",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "minexperiencelevel",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "maxexperiencelevel",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealRequirements",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "deals",
+      "otherEntityRelationshipName": "dealrequirementsDeal",
+      "relationshipName": "deal",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dealRequirementMatchingResources",
+      "otherEntityRelationshipName": "dealrequirement",
+      "relationshipName": "dealrequirementmatchingresourcesDealrequirement",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

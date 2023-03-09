@@ -1,0 +1,68 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173228",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_talents",
+  "fields": [
+    {
+      "fieldName": "criticalposition",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "highpotential",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "successorfor",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "criticalexperience",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "promotionreadiness",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "leadershipqualities",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "careerambitions",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeTalents",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeetalentsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

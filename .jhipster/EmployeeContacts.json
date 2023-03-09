@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173214",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_contacts",
+  "fields": [
+    {
+      "fieldName": "number",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "6"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeContacts",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeecontactsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

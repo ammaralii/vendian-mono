@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173143",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "business_units",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "BusinessUnits",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "businessunit",
+      "relationshipName": "employeejobinfoBusinessunit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "businessunit",
+      "relationshipName": "employeesBusinessunit",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "businessunit",
+      "relationshipName": "projectsBusinessunit",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

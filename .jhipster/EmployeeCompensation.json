@@ -1,0 +1,83 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173213",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_compensation",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ecReason",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "5"
+    },
+    {
+      "fieldName": "commitmentuntil",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "reasoncomments",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeCompensation",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeecompensationEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "reasons",
+      "otherEntityRelationshipName": "employeecompensationReason",
+      "relationshipName": "reason",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "compensationBenefits",
+      "otherEntityRelationshipName": "employeecompensation",
+      "relationshipName": "compensationbenefitsEmployeecompensation",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

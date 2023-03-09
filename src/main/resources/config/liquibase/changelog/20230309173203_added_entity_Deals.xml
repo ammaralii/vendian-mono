@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Deals.
+    -->
+    <changeSet id="20230309173203-1" author="jhipster">
+        <createTable tableName="deals">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="dealnumber" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dealname" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="businessunit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="clientname" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dealowner" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="proposaltype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectid" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="expectedstartdate" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="stage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="probability" type="double">
+                <constraints nullable="false" />
+            </column>
+            <column name="projectduration" type="double">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(9)">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(8)">
+                <constraints nullable="false" />
+            </column>
+            <column name="closedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="deletedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="resourcingenteredinvendians" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="deals" columnName="expectedstartdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="deals" columnName="closedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="deals" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="deals" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="deals" columnName="deletedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173203-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/deals.csv"
+                  separator=";"
+                  tableName="deals"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="dealnumber" type="string"/>
+            <column name="dealname" type="string"/>
+            <column name="businessunit" type="string"/>
+            <column name="clientname" type="string"/>
+            <column name="dealowner" type="string"/>
+            <column name="proposaltype" type="string"/>
+            <column name="projectid" type="numeric"/>
+            <column name="expectedstartdate" type="date"/>
+            <column name="stage" type="string"/>
+            <column name="probability" type="numeric"/>
+            <column name="projectduration" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="closedat" type="date"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="deletedat" type="date"/>
+            <column name="resourcingenteredinvendians" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

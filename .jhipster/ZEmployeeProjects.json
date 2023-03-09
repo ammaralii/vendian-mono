@@ -1,0 +1,129 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173359",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "z_employee_projects",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "12"
+    },
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "allocation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "billed",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "15"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deliverymanagerid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "architectid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "previousenddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extendedenddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "probability",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ZEmployeeProjects",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "events",
+      "otherEntityRelationshipName": "zemployeeprojectsEvent",
+      "relationshipName": "event",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "zemployeeprojectsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "zemployeeprojectsProject",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employeeProjects",
+      "otherEntityRelationshipName": "zemployeeprojectsEmployeeproject",
+      "relationshipName": "employeeproject",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "zemployeeprojectsAssignor",
+      "relationshipName": "assignor",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "zemployeeprojectsProjectmanager",
+      "relationshipName": "projectmanager",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

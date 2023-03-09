@@ -1,0 +1,71 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173349",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_attribute_escalation_rules",
+  "fields": [
+    {
+      "fieldName": "leaveEscalationCriteriaId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "noOfDays",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "UserAttributeEscalationRules",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "userattributeescalationrulesAttribute",
+      "relationshipName": "attribute",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveStatuses",
+      "otherEntityRelationshipName": "userattributeescalationrulesApproverstatus",
+      "relationshipName": "approverStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveEscalationCriterias",
+      "otherEntityRelationshipName": "userattributeescalationrulesLeaveescalationcriteria",
+      "relationshipName": "leaveescalationcriteria",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

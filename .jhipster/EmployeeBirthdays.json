@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173210",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_birthdays",
+  "fields": [
+    {
+      "fieldName": "birthdayDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeBirthdays",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeebirthdaysEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

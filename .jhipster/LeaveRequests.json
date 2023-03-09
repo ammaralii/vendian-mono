@@ -1,0 +1,93 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173253",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_requests",
+  "fields": [
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestStartDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "requestEndDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isHalfDay",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "statusDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveRequests",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveDetails",
+      "otherEntityRelationshipName": "leaverequestsLeavedetail",
+      "relationshipName": "leaveDetail",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveStatuses",
+      "otherEntityRelationshipName": "leaverequestsLeavestatus",
+      "relationshipName": "leaveStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveRequests",
+      "otherEntityRelationshipName": "leaverequestsParentleaverequest",
+      "relationshipName": "parentLeaveRequest",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "leaveRequestApprovers",
+      "otherEntityRelationshipName": "leaveRequest",
+      "relationshipName": "leaverequestapproversLeaverequest",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequests",
+      "otherEntityRelationshipName": "parentLeaveRequest",
+      "relationshipName": "leaverequestsParentleaverequest",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

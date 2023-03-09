@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity EmployeeJobInfo.
+    -->
+    <changeSet id="20230309173220-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="designation_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__designation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="designations"/>
+
+        <addForeignKeyConstraint baseColumnNames="reviewmanager_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__reviewmanager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="manager_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="department_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__department_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="departments"/>
+
+        <addForeignKeyConstraint baseColumnNames="employmenttype_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__employmenttype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employment_types"/>
+
+        <addForeignKeyConstraint baseColumnNames="jobdescription_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__jobdescription_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="designation_job_descriptions"/>
+
+        <addForeignKeyConstraint baseColumnNames="division_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__division_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="divisions"/>
+
+        <addForeignKeyConstraint baseColumnNames="businessunit_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__businessunit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="business_units"/>
+
+        <addForeignKeyConstraint baseColumnNames="competency_id"
+                                 baseTableName="employee_job_info"
+                                 constraintName="fk_employee_job_info__competency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="competencies"/>
+    </changeSet>
+</databaseChangeLog>

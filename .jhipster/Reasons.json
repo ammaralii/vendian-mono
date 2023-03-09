@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173339",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "reasons",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "isdefault",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Reasons",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeeCompensation",
+      "otherEntityRelationshipName": "reason",
+      "relationshipName": "employeecompensationReason",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

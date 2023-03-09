@@ -1,0 +1,89 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173322",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "project_cycles",
+  "fields": [
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "allowedafterduedateat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "duedate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "auditlogs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProjectCycles",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "projectcyclesProject",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "projectcyclesAllowedafterduedateby",
+      "relationshipName": "allowedafterduedateby",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "projectcyclesArchitect",
+      "relationshipName": "architect",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "projectcyclesProjectmanager",
+      "relationshipName": "projectmanager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "ratings",
+      "otherEntityRelationshipName": "projectcycle",
+      "ownerSide": true,
+      "relationshipName": "rating",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjectRatings",
+      "otherEntityRelationshipName": "projectcycle",
+      "relationshipName": "employeeprojectratingsProjectcycle",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "performanceCycles",
+      "otherEntityRelationshipName": "projectcycle",
+      "ownerSide": false,
+      "relationshipName": "performancecycle",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

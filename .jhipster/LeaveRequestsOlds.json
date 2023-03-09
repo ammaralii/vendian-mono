@@ -1,0 +1,135 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173254",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_requests_olds",
+  "fields": [
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "requesternote",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "managernote",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "currentstatus",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "leavescanceled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "requestdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "linkstring",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "linkused",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ishalfday",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "actiondate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lmstatus",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "pmstatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isbench",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isescalated",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "iscommented",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isreminded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isnotified",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isremindedhr",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isdm",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveRequestsOlds",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveTypesOlds",
+      "otherEntityRelationshipName": "leaverequestsoldsLeavetype",
+      "relationshipName": "leavetype",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "leaverequestsoldsManager",
+      "relationshipName": "manager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "leaverequestsoldsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

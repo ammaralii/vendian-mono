@@ -1,0 +1,65 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173206",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "designations",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Designations",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "designationJobDescriptions",
+      "otherEntityRelationshipName": "designation",
+      "relationshipName": "designationjobdescriptionsDesignation",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "designation",
+      "relationshipName": "employeejobinfoDesignation",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "designation",
+      "relationshipName": "employeesDesignation",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatingsRemarks",
+      "otherEntityRelationshipName": "designationAfterPromotion",
+      "relationshipName": "userratingsremarksDesignationafterpromotion",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatingsRemarks",
+      "otherEntityRelationshipName": "designationAfterRedesignation",
+      "relationshipName": "userratingsremarksDesignationafterredesignation",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

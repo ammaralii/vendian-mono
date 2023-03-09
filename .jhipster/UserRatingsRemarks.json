@@ -1,0 +1,110 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173354",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_ratings_remarks",
+  "fields": [
+    {
+      "fieldName": "isPromotion",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "strength",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "areaOfImprovement",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "promotionJustification",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "newGrade",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "isRedesignation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "recommendedSalary",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "9"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "otherComments",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "UserRatingsRemarks",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "designations",
+      "otherEntityRelationshipName": "userratingsremarksDesignationafterpromotion",
+      "relationshipName": "designationAfterPromotion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "designations",
+      "otherEntityRelationshipName": "userratingsremarksDesignationafterredesignation",
+      "relationshipName": "designationAfterRedesignation",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "userratingsremarksRater",
+      "relationshipName": "rater",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "performanceCycleEmployeeRating",
+      "otherEntityRelationshipName": "userratingsremarksPcemployeerating",
+      "relationshipName": "pcEmployeeRating",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

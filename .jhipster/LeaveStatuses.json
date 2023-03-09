@@ -1,0 +1,124 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173256",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_statuses",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "leaveGroup",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "systemKey",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "isDefault",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveStatuses",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveRequestApproverFlows",
+      "otherEntityRelationshipName": "approverStatus",
+      "relationshipName": "leaverequestapproverflowsApproverstatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestApproverFlows",
+      "otherEntityRelationshipName": "currentLeaveRequestStatus",
+      "relationshipName": "leaverequestapproverflowsCurrentleaverequeststatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestApproverFlows",
+      "otherEntityRelationshipName": "nextLeaveRequestStatus",
+      "relationshipName": "leaverequestapproverflowsNextleaverequeststatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestApprovers",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "leaverequestapproversStatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequests",
+      "otherEntityRelationshipName": "leaveStatus",
+      "relationshipName": "leaverequestsLeavestatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveStatusWorkFlows",
+      "otherEntityRelationshipName": "currentStatus",
+      "relationshipName": "leavestatusworkflowsCurrentstatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveStatusWorkFlows",
+      "otherEntityRelationshipName": "nextStatus",
+      "relationshipName": "leavestatusworkflowsNextstatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveStatusWorkFlows",
+      "otherEntityRelationshipName": "skipToStatus",
+      "relationshipName": "leavestatusworkflowsSkiptostatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeEscalationRules",
+      "otherEntityRelationshipName": "leaveRequestStatus",
+      "relationshipName": "leavetypeescalationrulesLeaverequeststatus",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributeEscalationRules",
+      "otherEntityRelationshipName": "approverStatus",
+      "relationshipName": "userattributeescalationrulesApproverstatus",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

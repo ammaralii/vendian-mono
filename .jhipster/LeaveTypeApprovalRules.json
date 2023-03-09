@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173257",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_type_approval_rules",
+  "fields": [
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveTypeApprovalRules",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveApprovalCriterias",
+      "otherEntityRelationshipName": "leavetypeapprovalrulesLeaveapprovalcriteria",
+      "relationshipName": "leaveApprovalCriteria",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveTypes",
+      "otherEntityRelationshipName": "leavetypeapprovalrulesLeavetype",
+      "relationshipName": "leaveType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

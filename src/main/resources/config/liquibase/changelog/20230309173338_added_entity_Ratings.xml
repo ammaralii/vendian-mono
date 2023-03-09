@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Ratings.
+    -->
+    <changeSet id="20230309173338-1" author="jhipster">
+        <createTable tableName="ratings">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="rateeid" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="rateetype" type="varchar(8)">
+                <constraints nullable="true" />
+            </column>
+            <column name="duedate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="freeze" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="freeze_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="deletedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="rater_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="ratings" columnName="duedate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ratings" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ratings" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="ratings" columnName="deletedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173338-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/ratings.csv"
+                  separator=";"
+                  tableName="ratings"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="rateeid" type="numeric"/>
+            <column name="rateetype" type="string"/>
+            <column name="duedate" type="date"/>
+            <column name="freeze" type="blob"/>
+            <column name="freeze_content_type" type="string"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="deletedat" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

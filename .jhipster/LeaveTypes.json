@@ -1,0 +1,98 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173301",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_types",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "9"
+    },
+    {
+      "fieldName": "cycleType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "5"
+    },
+    {
+      "fieldName": "cycleCount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "maxQuota",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveTypes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveDetails",
+      "otherEntityRelationshipName": "leaveType",
+      "relationshipName": "leavedetailsLeavetype",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeApprovalRules",
+      "otherEntityRelationshipName": "leaveType",
+      "relationshipName": "leavetypeapprovalrulesLeavetype",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeConfigurations",
+      "otherEntityRelationshipName": "leaveType",
+      "relationshipName": "leavetypeconfigurationsLeavetype",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeEscalationRules",
+      "otherEntityRelationshipName": "leaveType",
+      "relationshipName": "leavetypeescalationrulesLeavetype",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeRestrictions",
+      "otherEntityRelationshipName": "leaveType",
+      "relationshipName": "leavetyperestrictionsLeavetype",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

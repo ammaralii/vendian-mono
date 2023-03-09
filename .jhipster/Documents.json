@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173208",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "documents",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Documents",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "designationJobDescriptions",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "designationjobdescriptionsDocument",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeComments",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "employeecommentsDocument",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeDocuments",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "employeedocumentsDocument",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

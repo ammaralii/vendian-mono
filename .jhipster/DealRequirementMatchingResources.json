@@ -1,0 +1,67 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173157",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_requirement_matching_resources",
+  "fields": [
+    {
+      "fieldName": "comments",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealRequirementMatchingResources",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dealRequirements",
+      "otherEntityRelationshipName": "dealrequirementmatchingresourcesDealrequirement",
+      "relationshipName": "dealrequirement",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dealResources",
+      "otherEntityRelationshipName": "dealrequirementmatchingresourcesResource",
+      "relationshipName": "resource",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "systemKey",
+      "otherEntityName": "dealResourceStatus",
+      "otherEntityRelationshipName": "dealrequirementmatchingresourcesResourcestatus",
+      "relationshipName": "resourcestatus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "systemKey",
+      "otherEntityName": "dealResourceStatus",
+      "otherEntityRelationshipName": "dealrequirementmatchingresourcesSystemstatus",
+      "relationshipName": "systemstatus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dealResourceEventLogs",
+      "otherEntityRelationshipName": "matchingresource",
+      "relationshipName": "dealresourceeventlogsMatchingresource",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

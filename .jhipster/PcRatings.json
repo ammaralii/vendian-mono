@@ -1,0 +1,100 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173315",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pc_ratings",
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "stausDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "freeze",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "includeInFinalRating",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PcRatings",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pcStatuses",
+      "otherEntityRelationshipName": "pcratingsStatus",
+      "relationshipName": "status",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "performanceCycleEmployeeRating",
+      "otherEntityRelationshipName": "pcratingsPcemployeerating",
+      "relationshipName": "pcemployeerating",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "pcratingsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "pcRaterAttributes",
+      "otherEntityRelationshipName": "rating",
+      "relationshipName": "pcraterattributesRating",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pcRatingsTrainings",
+      "otherEntityRelationshipName": "rating",
+      "relationshipName": "pcratingstrainingsRating",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userGoalRaterAttributes",
+      "otherEntityRelationshipName": "rating",
+      "relationshipName": "usergoalraterattributesRating",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

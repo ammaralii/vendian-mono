@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173355",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_relation_approval_rules",
+  "fields": [
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "UserRelationApprovalRules",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "userrelationapprovalrulesAttribute",
+      "relationshipName": "attribute",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveApprovalCriterias",
+      "otherEntityRelationshipName": "userrelationapprovalrulesLeaveapprovalcriteria",
+      "relationshipName": "leaveApprovalCriteria",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

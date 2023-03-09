@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity PerformanceCycles.
+    -->
+    <changeSet id="20230309173319-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="performance_cycles_id"
+                                 baseTableName="rel_performance_cycles__projectcycle"
+                                 constraintName="fk_rel_performance_cycles__projectcycle__performance_cycles_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="performance_cycles"/>
+
+        <addForeignKeyConstraint baseColumnNames="projectcycle_id"
+                                 baseTableName="rel_performance_cycles__projectcycle"
+                                 constraintName="fk_rel_performance_cycles__projectcycle__projectcycle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project_cycles"/>
+
+        <addForeignKeyConstraint baseColumnNames="performance_cycles_id"
+                                 baseTableName="rel_performance_cycles__employeerating"
+                                 constraintName="fk_rel_performance_cycles__empl__performance_cycles_ad_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="performance_cycles"/>
+
+        <addForeignKeyConstraint baseColumnNames="employeerating_id"
+                                 baseTableName="rel_performance_cycles__employeerating"
+                                 constraintName="fk_rel_performance_cycles__employeerating__employeerating_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ratings"/>
+    </changeSet>
+</databaseChangeLog>

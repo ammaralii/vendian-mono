@@ -1,0 +1,53 @@
+import dayjs from 'dayjs';
+import { IEmployees } from 'app/shared/model/employees.model';
+import { IProjectCycles } from 'app/shared/model/project-cycles.model';
+
+export interface IEmployeeProjectRatings {
+  id?: number;
+  createdat?: string | null;
+  updatedat?: string | null;
+  pmqualityContentType?: string | null;
+  pmquality?: string | null;
+  pmownershipContentType?: string | null;
+  pmownership?: string | null;
+  pmskillContentType?: string | null;
+  pmskill?: string | null;
+  pmethicsContentType?: string | null;
+  pmethics?: string | null;
+  pmefficiencyContentType?: string | null;
+  pmefficiency?: string | null;
+  pmfreezeContentType?: string | null;
+  pmfreeze?: string | null;
+  archfreezeContentType?: string | null;
+  archfreeze?: string | null;
+  pmcommentContentType?: string | null;
+  pmcomment?: string | null;
+  archqualityContentType?: string | null;
+  archquality?: string | null;
+  archownershipContentType?: string | null;
+  archownership?: string | null;
+  archskillContentType?: string | null;
+  archskill?: string | null;
+  archethicsContentType?: string | null;
+  archethics?: string | null;
+  archefficiencyContentType?: string | null;
+  archefficiency?: string | null;
+  archcommentContentType?: string | null;
+  archcomment?: string | null;
+  archcodequalityContentType?: string | null;
+  archcodequality?: string | null;
+  archdocumentationContentType?: string | null;
+  archdocumentation?: string | null;
+  archcollaborationContentType?: string | null;
+  archcollaboration?: string | null;
+  pmdocumentationContentType?: string | null;
+  pmdocumentation?: string | null;
+  pmcollaborationContentType?: string | null;
+  pmcollaboration?: string | null;
+  projectarchitect?: IEmployees | null;
+  projectmanager?: IEmployees | null;
+  employee?: IEmployees | null;
+  projectcycle?: IProjectCycles | null;
+}
+
+export const defaultValue: Readonly<IEmployeeProjectRatings> = {};

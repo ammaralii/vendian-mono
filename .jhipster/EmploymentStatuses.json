@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173232",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employment_statuses",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmploymentStatuses",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employmentstatus",
+      "relationshipName": "employeesEmploymentstatus",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

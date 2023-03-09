@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity PerformanceCycles.
+    -->
+    <changeSet id="20230309173319-1" author="jhipster">
+        <createTable tableName="performance_cycles">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="month" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="year" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="totalresources" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmreviewed" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="archreviewed" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="startdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="enddate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="isactive" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectcount" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="criteria" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="notificationsent" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="duedate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="initiationdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="performance_cycles" columnName="startdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="performance_cycles" columnName="enddate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="performance_cycles" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="performance_cycles" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="performance_cycles" columnName="duedate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="performance_cycles" columnName="initiationdate" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20230309173319-1-relations" author="jhipster">
+
+        <createTable tableName="rel_performance_cycles__projectcycle">
+            <column name="projectcycle_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="performance_cycles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="performance_cycles_id, projectcycle_id" tableName="rel_performance_cycles__projectcycle"/>
+
+        <createTable tableName="rel_performance_cycles__employeerating">
+            <column name="employeerating_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="performance_cycles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="performance_cycles_id, employeerating_id" tableName="rel_performance_cycles__employeerating"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173319-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/performance_cycles.csv"
+                  separator=";"
+                  tableName="performance_cycles"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="month" type="boolean"/>
+            <column name="year" type="boolean"/>
+            <column name="totalresources" type="boolean"/>
+            <column name="pmreviewed" type="boolean"/>
+            <column name="archreviewed" type="boolean"/>
+            <column name="startdate" type="date"/>
+            <column name="enddate" type="date"/>
+            <column name="isactive" type="boolean"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="projectcount" type="boolean"/>
+            <column name="criteria" type="numeric"/>
+            <column name="notificationsent" type="boolean"/>
+            <column name="duedate" type="date"/>
+            <column name="initiationdate" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

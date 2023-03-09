@@ -1,0 +1,81 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173258",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_type_configurations",
+  "fields": [
+    {
+      "fieldName": "noOfLeaves",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tenureCycle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "5"
+    },
+    {
+      "fieldName": "to",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "from",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "inclusivity",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "14"
+    },
+    {
+      "fieldName": "maxQuota",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isAccured",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveTypeConfigurations",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveTypes",
+      "otherEntityRelationshipName": "leavetypeconfigurationsLeavetype",
+      "relationshipName": "leaveType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

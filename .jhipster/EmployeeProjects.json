@@ -1,0 +1,105 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173225",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_projects",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "12"
+    },
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "allocation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "billed",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "15"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "roleid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "extendedenddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "probability",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeProjects",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeeprojectsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "employeeprojectsProject",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeeprojectsAssignor",
+      "relationshipName": "assignor",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employeeProjectRoles",
+      "otherEntityRelationshipName": "employeeproject",
+      "relationshipName": "employeeprojectrolesEmployeeproject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "employeeproject",
+      "relationshipName": "zemployeeprojectsEmployeeproject",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

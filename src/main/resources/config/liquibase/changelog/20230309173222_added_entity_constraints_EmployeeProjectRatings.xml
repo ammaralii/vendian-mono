@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity EmployeeProjectRatings.
+    -->
+    <changeSet id="20230309173222-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="projectarchitect_id"
+                                 baseTableName="employee_project_ratings"
+                                 constraintName="fk_employee_project_ratings__projectarchitect_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="projectmanager_id"
+                                 baseTableName="employee_project_ratings"
+                                 constraintName="fk_employee_project_ratings__projectmanager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="employee_id"
+                                 baseTableName="employee_project_ratings"
+                                 constraintName="fk_employee_project_ratings__employee_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="projectcycle_id"
+                                 baseTableName="employee_project_ratings"
+                                 constraintName="fk_employee_project_ratings__projectcycle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project_cycles"/>
+    </changeSet>
+</databaseChangeLog>

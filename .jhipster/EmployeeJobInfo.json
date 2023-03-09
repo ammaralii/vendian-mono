@@ -1,0 +1,130 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173220",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_job_info",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "subgrade",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "grosssalary",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "fuelallowance",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeJobInfo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeejobinfoEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "designations",
+      "otherEntityRelationshipName": "employeejobinfoDesignation",
+      "relationshipName": "designation",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeejobinfoReviewmanager",
+      "relationshipName": "reviewmanager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeejobinfoManager",
+      "relationshipName": "manager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "departments",
+      "otherEntityRelationshipName": "employeejobinfoDepartment",
+      "relationshipName": "department",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "employmentTypes",
+      "otherEntityRelationshipName": "employeejobinfoEmploymenttype",
+      "relationshipName": "employmenttype",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "designationJobDescriptions",
+      "otherEntityRelationshipName": "employeejobinfoJobdescription",
+      "relationshipName": "jobdescription",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "divisions",
+      "otherEntityRelationshipName": "employeejobinfoDivision",
+      "relationshipName": "division",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "businessUnits",
+      "otherEntityRelationshipName": "employeejobinfoBusinessunit",
+      "relationshipName": "businessunit",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "competencies",
+      "otherEntityRelationshipName": "employeejobinfoCompetency",
+      "relationshipName": "competency",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

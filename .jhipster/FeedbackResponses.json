@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173239",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "feedback_responses",
+  "fields": [
+    {
+      "fieldName": "answer",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "FeedbackResponses",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "feedbackRespondents",
+      "otherEntityRelationshipName": "feedbackresponsesRespondent",
+      "relationshipName": "respondent",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "feedbackQuestions",
+      "otherEntityRelationshipName": "feedbackresponsesQuestion",
+      "relationshipName": "question",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

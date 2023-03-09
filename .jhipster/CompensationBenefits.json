@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173152",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "compensation_benefits",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "isdeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "CompensationBenefits",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "benefits",
+      "otherEntityRelationshipName": "compensationbenefitsBenefit",
+      "relationshipName": "benefit",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employeeCompensation",
+      "otherEntityRelationshipName": "compensationbenefitsEmployeecompensation",
+      "relationshipName": "employeecompensation",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

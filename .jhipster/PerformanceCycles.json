@@ -1,0 +1,91 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173319",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "performance_cycles",
+  "fields": [
+    {
+      "fieldName": "month",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "year",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "totalresources",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pmreviewed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "archreviewed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "projectcount",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "criteria",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notificationsent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "duedate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "initiationdate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PerformanceCycles",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "performancecycle",
+      "ownerSide": true,
+      "relationshipName": "projectcycle",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "ratings",
+      "otherEntityRelationshipName": "performancecycle",
+      "ownerSide": true,
+      "relationshipName": "employeerating",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

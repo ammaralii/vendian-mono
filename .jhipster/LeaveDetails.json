@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173248",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_details",
+  "fields": [
+    {
+      "fieldName": "total",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "used",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveDetails",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaves",
+      "otherEntityRelationshipName": "leavedetailsLeave",
+      "relationshipName": "leave",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveTypes",
+      "otherEntityRelationshipName": "leavedetailsLeavetype",
+      "relationshipName": "leaveType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveDetailAdjustmentLogs",
+      "otherEntityRelationshipName": "leaveDetail",
+      "relationshipName": "leavedetailadjustmentlogsLeavedetail",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequests",
+      "otherEntityRelationshipName": "leaveDetail",
+      "relationshipName": "leaverequestsLeavedetail",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

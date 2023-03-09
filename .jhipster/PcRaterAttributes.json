@@ -1,0 +1,66 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173312",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "pc_rater_attributes",
+  "fields": [
+    {
+      "fieldName": "pcRating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PcRaterAttributes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ratingAttributeMappings",
+      "otherEntityRelationshipName": "pcraterattributesRatingattributemapping",
+      "relationshipName": "ratingAttributeMapping",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "ratingOptions",
+      "otherEntityRelationshipName": "pcraterattributesRatingoption",
+      "relationshipName": "ratingOption",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "pcRatings",
+      "otherEntityRelationshipName": "pcraterattributesRating",
+      "relationshipName": "rating",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

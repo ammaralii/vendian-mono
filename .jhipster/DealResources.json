@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173202",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_resources",
+  "fields": [
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "joiningdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "externalexpyears",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "externalexpmonths",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "14"
+    },
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealResources",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "dealresourcesEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "dealRequirementMatchingResources",
+      "otherEntityRelationshipName": "resource",
+      "relationshipName": "dealrequirementmatchingresourcesResource",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dealResourceSkills",
+      "otherEntityRelationshipName": "resource",
+      "relationshipName": "dealresourceskillsResource",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

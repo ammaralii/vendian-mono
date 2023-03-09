@@ -1,0 +1,105 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173139",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "attributes",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Attributes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveApprovers",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "leaveapproversAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveEscalationApprovers",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "leaveescalationapproversAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "raterAttributeMappings",
+      "otherEntityRelationshipName": "attributesFor",
+      "relationshipName": "raterattributemappingsAttributesfor",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "raterAttributeMappings",
+      "otherEntityRelationshipName": "attributesBy",
+      "relationshipName": "raterattributemappingsAttributesby",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "ratingAttributeMappings",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "ratingattributemappingsAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributeApprovalRules",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "userattributeapprovalrulesAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributeEscalationRules",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "userattributeescalationrulesAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributes",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "userattributesAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRelationApprovalRules",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "userrelationapprovalrulesAttribute",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRelations",
+      "otherEntityRelationshipName": "attribute",
+      "relationshipName": "userrelationsAttribute",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

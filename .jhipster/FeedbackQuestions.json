@@ -1,0 +1,73 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173236",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "feedback_questions",
+  "fields": [
+    {
+      "fieldName": "question",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "isdefault",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "competency",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isskill",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "skilltype",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "FeedbackQuestions",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "feedbackquestionsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "feedbackResponses",
+      "otherEntityRelationshipName": "question",
+      "relationshipName": "feedbackresponsesQuestion",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173238",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "feedback_respondents",
+  "fields": [
+    {
+      "fieldName": "category",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hasresponded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "respondedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "FeedbackRespondents",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "feedbackrespondentsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "feedbackRequests",
+      "otherEntityRelationshipName": "feedbackrespondentsRequest",
+      "relationshipName": "request",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "feedbackEmails",
+      "otherEntityRelationshipName": "respondent",
+      "relationshipName": "feedbackemailsRespondent",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedbackResponses",
+      "otherEntityRelationshipName": "respondent",
+      "relationshipName": "feedbackresponsesRespondent",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
