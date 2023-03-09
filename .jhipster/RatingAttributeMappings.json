@@ -1,0 +1,61 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173334",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "rating_attribute_mappings",
+  "fields": [
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "RatingAttributeMappings",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "ratingattributemappingsAttribute",
+      "relationshipName": "attribute",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "pcRatingAttributes",
+      "otherEntityRelationshipName": "ratingattributemappingsRatingattribute",
+      "relationshipName": "ratingAttribute",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "pcRaterAttributes",
+      "otherEntityRelationshipName": "ratingAttributeMapping",
+      "relationshipName": "pcraterattributesRatingattributemapping",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

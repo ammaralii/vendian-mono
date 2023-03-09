@@ -1,0 +1,22 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173344",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "sequelize_meta",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Sequelizemeta",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

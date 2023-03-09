@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173156",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_events",
+  "fields": [
+    {
+      "fieldName": "eventtype",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "7"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealEvents",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

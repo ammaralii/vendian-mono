@@ -1,0 +1,67 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173328",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "questions",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "answer",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "cleaneduptext",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Questions",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "interviews",
+      "otherEntityRelationshipName": "questionsInterview",
+      "relationshipName": "interview",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "questionsProject",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tracks",
+      "otherEntityRelationshipName": "questionsTrack",
+      "relationshipName": "track",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

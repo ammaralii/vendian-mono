@@ -1,0 +1,75 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173250",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_escalation_criterias",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveEscalationCriterias",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveEscalationApprovers",
+      "otherEntityRelationshipName": "leaveEscalationCriteria",
+      "relationshipName": "leaveescalationapproversLeaveescalationcriteria",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeEscalationRules",
+      "otherEntityRelationshipName": "leaveEscalationCriteria",
+      "relationshipName": "leavetypeescalationrulesLeaveescalationcriteria",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributeEscalationRules",
+      "otherEntityRelationshipName": "leaveescalationcriteria",
+      "relationshipName": "userattributeescalationrulesLeaveescalationcriteria",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

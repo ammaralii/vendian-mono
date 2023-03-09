@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Employees.
+    -->
+    <changeSet id="20230309173230-1" author="jhipster">
+        <createTable tableName="employees">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="firstname" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lastname" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="phonenumber" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dateofbirth" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="skype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_designation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="joiningdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="area" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="leavingdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="notes" type="varchar(65535)">
+                <constraints nullable="true" />
+            </column>
+            <column name="isactive" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="googleid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="oracleid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="deptt" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="genderid" type="varchar(6)">
+                <constraints nullable="false" />
+            </column>
+            <column name="onprobation" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_competency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resourcetype" type="varchar(12)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="subgrade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="imageurl" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resignationdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="graduationdate" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="careerstartdate" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="externalexpyears" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="externalexpmonths" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="placeofbirth" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hireddate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="lasttrackingupdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="middlename" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grosssalary" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="grosssalary_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fuelallowance" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="fuelallowance_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mobilenumber" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resignationtype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="primaryreasonforleaving" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="secondaryreasonforleaving" type="varchar(65535)">
+                <constraints nullable="true" />
+            </column>
+            <column name="noticeperiodduration" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="noticeperiodserved" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="probationperiodduration" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="location_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="role_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="manager_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="leave_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="department_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="businessunit_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="division_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="competency_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="employmentstatus_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="employmenttype_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="designation_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="employees" columnName="dateofbirth" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="joiningdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="leavingdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="resignationdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="hireddate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employees" columnName="lasttrackingupdate" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173230-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/employees.csv"
+                  separator=";"
+                  tableName="employees"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="firstname" type="string"/>
+            <column name="lastname" type="string"/>
+            <column name="phonenumber" type="string"/>
+            <column name="dateofbirth" type="date"/>
+            <column name="email" type="string"/>
+            <column name="skype" type="string"/>
+            <column name="employee_designation" type="string"/>
+            <column name="joiningdate" type="date"/>
+            <column name="area" type="string"/>
+            <column name="leavingdate" type="date"/>
+            <column name="notes" type="string"/>
+            <column name="isactive" type="boolean"/>
+            <column name="googleid" type="string"/>
+            <column name="oracleid" type="string"/>
+            <column name="deptt" type="string"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="genderid" type="string"/>
+            <column name="onprobation" type="boolean"/>
+            <column name="employee_competency" type="string"/>
+            <column name="resourcetype" type="string"/>
+            <column name="grade" type="string"/>
+            <column name="subgrade" type="string"/>
+            <column name="imageurl" type="string"/>
+            <column name="resignationdate" type="date"/>
+            <column name="graduationdate" type="date"/>
+            <column name="careerstartdate" type="date"/>
+            <column name="externalexpyears" type="numeric"/>
+            <column name="externalexpmonths" type="numeric"/>
+            <column name="placeofbirth" type="string"/>
+            <column name="hireddate" type="date"/>
+            <column name="lasttrackingupdate" type="date"/>
+            <column name="middlename" type="string"/>
+            <column name="grosssalary" type="blob"/>
+            <column name="grosssalary_content_type" type="string"/>
+            <column name="fuelallowance" type="blob"/>
+            <column name="fuelallowance_content_type" type="string"/>
+            <column name="mobilenumber" type="string"/>
+            <column name="resignationtype" type="string"/>
+            <column name="primaryreasonforleaving" type="string"/>
+            <column name="secondaryreasonforleaving" type="string"/>
+            <column name="noticeperiodduration" type="numeric"/>
+            <column name="noticeperiodserved" type="numeric"/>
+            <column name="probationperiodduration" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

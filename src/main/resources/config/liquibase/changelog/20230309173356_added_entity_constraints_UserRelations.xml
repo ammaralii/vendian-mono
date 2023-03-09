@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserRelations.
+    -->
+    <changeSet id="20230309173356-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_relations"
+                                 constraintName="fk_user_relations__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="attribute_id"
+                                 baseTableName="user_relations"
+                                 constraintName="fk_user_relations__attribute_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="attributes"/>
+
+        <addForeignKeyConstraint baseColumnNames="related_user_id"
+                                 baseTableName="user_relations"
+                                 constraintName="fk_user_relations__related_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+    </changeSet>
+</databaseChangeLog>

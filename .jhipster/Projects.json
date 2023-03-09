@@ -1,0 +1,135 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173326",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "projects",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isdelete",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "startdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "colorcode",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deliverymanagerid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "architectid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isdeleted",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "approvedresources",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "releaseat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Projects",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "projectsProjectmanager",
+      "relationshipName": "projectmanager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "businessUnits",
+      "otherEntityRelationshipName": "projectsBusinessunit",
+      "relationshipName": "businessunit",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employeeProjects",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "employeeprojectsProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "interviews",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "interviewsProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "projectcyclesProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectLeadership",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "projectleadershipProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "questions",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "questionsProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "questionsFrequencyPerClientTrack",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "questionsfrequencyperclienttrackProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "workLogDetails",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "worklogdetailsProject",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "zemployeeprojectsProject",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

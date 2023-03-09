@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserRatings.
+    -->
+    <changeSet id="20230309173353-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_ratings"
+                                 constraintName="fk_user_ratings__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="review_manager_id"
+                                 baseTableName="user_ratings"
+                                 constraintName="fk_user_ratings__review_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="performance_cycle_id"
+                                 baseTableName="user_ratings"
+                                 constraintName="fk_user_ratings__performance_cycle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hr_performance_cycles"/>
+    </changeSet>
+</databaseChangeLog>

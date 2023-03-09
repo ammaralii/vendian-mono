@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173329",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "questions_frequency_per_client_track",
+  "fields": [
+    {
+      "fieldName": "question",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "frequency",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "QuestionsFrequencyPerClientTrack",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "questionsfrequencyperclienttrackProject",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tracks",
+      "otherEntityRelationshipName": "questionsfrequencyperclienttrackTrack",
+      "relationshipName": "track",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

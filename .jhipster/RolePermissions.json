@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173341",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "role_permissions",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "RolePermissions",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "roles",
+      "otherEntityRelationshipName": "rolepermissionsRole",
+      "relationshipName": "role",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "permissions",
+      "otherEntityRelationshipName": "rolepermissionsPermission",
+      "relationshipName": "permission",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

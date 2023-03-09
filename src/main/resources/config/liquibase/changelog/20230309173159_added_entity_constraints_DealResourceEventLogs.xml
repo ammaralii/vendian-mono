@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity DealResourceEventLogs.
+    -->
+    <changeSet id="20230309173159-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="matchingresource_id"
+                                 baseTableName="deal_resource_event_logs"
+                                 constraintName="fk_deal_resource_event_logs__matchingresource_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deal_requirement_matching_resources"/>
+
+        <addForeignKeyConstraint baseColumnNames="resourcestatus_id"
+                                 baseTableName="deal_resource_event_logs"
+                                 constraintName="fk_deal_resource_event_logs__resourcestatus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deal_resource_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="systemstatus_id"
+                                 baseTableName="deal_resource_event_logs"
+                                 constraintName="fk_deal_resource_event_logs__systemstatus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deal_resource_status"/>
+    </changeSet>
+</databaseChangeLog>

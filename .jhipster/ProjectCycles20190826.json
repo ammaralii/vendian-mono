@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173323",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "project_cycles_20190826",
+  "fields": [
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "performancecycleid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "projectid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "allowedafterduedateby",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "allowedafterduedateat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "duedate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProjectCycles20190826",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

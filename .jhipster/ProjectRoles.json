@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173325",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "project_roles",
+  "fields": [
+    {
+      "fieldName": "role",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isleadership",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProjectRoles",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeeProjectRoles",
+      "otherEntityRelationshipName": "projectrole",
+      "relationshipName": "employeeprojectrolesProjectrole",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectLeadership",
+      "otherEntityRelationshipName": "projectrole",
+      "relationshipName": "projectleadershipProjectrole",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

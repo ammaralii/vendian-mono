@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173308",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "notification_events",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "NotificationEvents",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "notificationMergeFields",
+      "otherEntityRelationshipName": "notificationEvent",
+      "relationshipName": "notificationmergefieldsNotificationevent",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "notificationTemplates",
+      "otherEntityRelationshipName": "notificationEvent",
+      "relationshipName": "notificationtemplatesNotificationevent",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

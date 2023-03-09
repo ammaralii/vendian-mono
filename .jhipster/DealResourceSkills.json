@@ -1,0 +1,41 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173200",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "deal_resource_skills",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DealResourceSkills",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dealResources",
+      "otherEntityRelationshipName": "dealresourceskillsResource",
+      "relationshipName": "resource",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "skills",
+      "otherEntityRelationshipName": "dealresourceskillsSkill",
+      "relationshipName": "skill",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserGoalRaterAttributes.
+    -->
+    <changeSet id="20230309173351-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="rating_id"
+                                 baseTableName="user_goal_rater_attributes"
+                                 constraintName="fk_user_goal_rater_attributes__rating_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pc_ratings"/>
+
+        <addForeignKeyConstraint baseColumnNames="usergoal_id"
+                                 baseTableName="user_goal_rater_attributes"
+                                 constraintName="fk_user_goal_rater_attributes__usergoal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_goals"/>
+    </changeSet>
+</databaseChangeLog>

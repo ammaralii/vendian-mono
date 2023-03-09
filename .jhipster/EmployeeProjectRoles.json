@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173224",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_project_roles",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeProjectRoles",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeeProjects",
+      "otherEntityRelationshipName": "employeeprojectrolesEmployeeproject",
+      "relationshipName": "employeeproject",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "projectRoles",
+      "otherEntityRelationshipName": "employeeprojectrolesProjectrole",
+      "relationshipName": "projectrole",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

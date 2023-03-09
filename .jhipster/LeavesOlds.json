@@ -1,0 +1,89 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173305",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leaves_olds",
+  "fields": [
+    {
+      "fieldName": "annualtotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "annualused",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "annualadjustments",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "casualtotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "casualused",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sicktotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sickused",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "annualtotalnextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "annualusednextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "casualtotalnextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "casualusednextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sicktotalnextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "sickusednextyear",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "carryforward",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeavesOlds",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "leave",
+      "relationshipName": "employeesLeave",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

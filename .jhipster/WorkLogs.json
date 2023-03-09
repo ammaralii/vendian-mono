@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173358",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "work_logs",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "mood",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "WorkLogs",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "worklogsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "workLogDetails",
+      "otherEntityRelationshipName": "worklog",
+      "relationshipName": "worklogdetailsWorklog",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

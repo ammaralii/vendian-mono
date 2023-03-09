@@ -1,0 +1,49 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173335",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "rating_attributes",
+  "fields": [
+    {
+      "fieldName": "raRating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "RatingAttributes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ratings",
+      "otherEntityRelationshipName": "ratingattributesRating",
+      "relationshipName": "rating",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "raterAttributeMappings",
+      "otherEntityRelationshipName": "ratingattributesRaterattributemapping",
+      "relationshipName": "raterattributemapping",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

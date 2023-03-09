@@ -1,0 +1,66 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173242",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "goals",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "measurement",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Goals",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "goalGroupMappings",
+      "otherEntityRelationshipName": "goal",
+      "relationshipName": "goalgroupmappingsGoal",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userGoals",
+      "otherEntityRelationshipName": "referenceGoal",
+      "relationshipName": "usergoalsReferencegoal",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

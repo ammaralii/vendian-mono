@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity EmployeeProjectRatings.
+    -->
+    <changeSet id="20230309173222-1" author="jhipster">
+        <createTable tableName="employee_project_ratings">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmquality" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmquality_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmownership" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmownership_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmskill" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmskill_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmethics" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmethics_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmefficiency" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmefficiency_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmfreeze" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmfreeze_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archfreeze" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archfreeze_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmcomment" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmcomment_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archquality" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archquality_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archownership" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archownership_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archskill" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archskill_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archethics" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archethics_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archefficiency" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archefficiency_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcomment" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcomment_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcodequality" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcodequality_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archdocumentation" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archdocumentation_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcollaboration" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="archcollaboration_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmdocumentation" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmdocumentation_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmcollaboration" type="${blobType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmcollaboration_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectarchitect_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectmanager_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="projectcycle_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="employee_project_ratings" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="employee_project_ratings" columnName="updatedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173222-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/employee_project_ratings.csv"
+                  separator=";"
+                  tableName="employee_project_ratings"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="pmquality" type="blob"/>
+            <column name="pmquality_content_type" type="string"/>
+            <column name="pmownership" type="blob"/>
+            <column name="pmownership_content_type" type="string"/>
+            <column name="pmskill" type="blob"/>
+            <column name="pmskill_content_type" type="string"/>
+            <column name="pmethics" type="blob"/>
+            <column name="pmethics_content_type" type="string"/>
+            <column name="pmefficiency" type="blob"/>
+            <column name="pmefficiency_content_type" type="string"/>
+            <column name="pmfreeze" type="blob"/>
+            <column name="pmfreeze_content_type" type="string"/>
+            <column name="archfreeze" type="blob"/>
+            <column name="archfreeze_content_type" type="string"/>
+            <column name="pmcomment" type="blob"/>
+            <column name="pmcomment_content_type" type="string"/>
+            <column name="archquality" type="blob"/>
+            <column name="archquality_content_type" type="string"/>
+            <column name="archownership" type="blob"/>
+            <column name="archownership_content_type" type="string"/>
+            <column name="archskill" type="blob"/>
+            <column name="archskill_content_type" type="string"/>
+            <column name="archethics" type="blob"/>
+            <column name="archethics_content_type" type="string"/>
+            <column name="archefficiency" type="blob"/>
+            <column name="archefficiency_content_type" type="string"/>
+            <column name="archcomment" type="blob"/>
+            <column name="archcomment_content_type" type="string"/>
+            <column name="archcodequality" type="blob"/>
+            <column name="archcodequality_content_type" type="string"/>
+            <column name="archdocumentation" type="blob"/>
+            <column name="archdocumentation_content_type" type="string"/>
+            <column name="archcollaboration" type="blob"/>
+            <column name="archcollaboration_content_type" type="string"/>
+            <column name="pmdocumentation" type="blob"/>
+            <column name="pmdocumentation_content_type" type="string"/>
+            <column name="pmcollaboration" type="blob"/>
+            <column name="pmcollaboration_content_type" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

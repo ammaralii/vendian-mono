@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173338",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ratings",
+  "fields": [
+    {
+      "fieldName": "rateeid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rateetype",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "8"
+    },
+    {
+      "fieldName": "duedate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "freeze",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Ratings",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "ratingsRater",
+      "relationshipName": "rater",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "ratingAttributes",
+      "otherEntityRelationshipName": "rating",
+      "relationshipName": "ratingattributesRating",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "performanceCycles",
+      "otherEntityRelationshipName": "employeerating",
+      "ownerSide": false,
+      "relationshipName": "performancecycle",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "rating",
+      "ownerSide": false,
+      "relationshipName": "projectcycle",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

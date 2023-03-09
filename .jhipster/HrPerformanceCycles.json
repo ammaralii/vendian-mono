@@ -1,0 +1,70 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173243",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hr_performance_cycles",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "freeze",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "HrPerformanceCycles",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "performanceCycleEmployeeRating",
+      "otherEntityRelationshipName": "performancecycle",
+      "relationshipName": "performancecycleemployeeratingPerformancecycle",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatings",
+      "otherEntityRelationshipName": "performanceCycle",
+      "relationshipName": "userratingsPerformancecycle",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,79 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173318",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "performance_cycle_employee_rating",
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "PerformanceCycleEmployeeRating",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hrPerformanceCycles",
+      "otherEntityRelationshipName": "performancecycleemployeeratingPerformancecycle",
+      "relationshipName": "performancecycle",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "performancecycleemployeeratingEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "performancecycleemployeeratingManager",
+      "relationshipName": "manager",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "pcRatings",
+      "otherEntityRelationshipName": "pcemployeerating",
+      "relationshipName": "pcratingsPcemployeerating",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatingsRemarks",
+      "otherEntityRelationshipName": "pcEmployeeRating",
+      "relationshipName": "userratingsremarksPcemployeerating",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

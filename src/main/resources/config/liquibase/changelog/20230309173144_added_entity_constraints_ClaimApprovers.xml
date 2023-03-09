@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ClaimApprovers.
+    -->
+    <changeSet id="20230309173144-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="claim_approvers"
+                                 constraintName="fk_claim_approvers__status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="claim_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="claimrequest_id"
+                                 baseTableName="claim_approvers"
+                                 constraintName="fk_claim_approvers__claimrequest_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="claim_requests"/>
+    </changeSet>
+</databaseChangeLog>

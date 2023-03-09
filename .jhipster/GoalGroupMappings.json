@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173240",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "goal_group_mappings",
+  "fields": [
+    {
+      "fieldName": "weightage",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "GoalGroupMappings",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "goalGroups",
+      "otherEntityRelationshipName": "goalgroupmappingsGoalgroup",
+      "relationshipName": "goalGroup",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "goals",
+      "otherEntityRelationshipName": "goalgroupmappingsGoal",
+      "relationshipName": "goal",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

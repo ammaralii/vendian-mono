@@ -1,0 +1,66 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173255",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_status_work_flows",
+  "fields": [
+    {
+      "fieldName": "ifApprovals",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "approvalRequired",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveStatusWorkFlows",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveStatuses",
+      "otherEntityRelationshipName": "leavestatusworkflowsCurrentstatus",
+      "relationshipName": "currentStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveStatuses",
+      "otherEntityRelationshipName": "leavestatusworkflowsNextstatus",
+      "relationshipName": "nextStatus",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "leaveStatuses",
+      "otherEntityRelationshipName": "leavestatusworkflowsSkiptostatus",
+      "relationshipName": "skipToStatus",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

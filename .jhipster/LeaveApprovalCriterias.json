@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173245",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_approval_criterias",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "effDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveApprovalCriterias",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveApprovers",
+      "otherEntityRelationshipName": "leaveApprovalCriteria",
+      "relationshipName": "leaveapproversLeaveapprovalcriteria",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveTypeApprovalRules",
+      "otherEntityRelationshipName": "leaveApprovalCriteria",
+      "relationshipName": "leavetypeapprovalrulesLeaveapprovalcriteria",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributeApprovalRules",
+      "otherEntityRelationshipName": "leaveApprovalCriteria",
+      "relationshipName": "userattributeapprovalrulesLeaveapprovalcriteria",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRelationApprovalRules",
+      "otherEntityRelationshipName": "leaveApprovalCriteria",
+      "relationshipName": "userrelationapprovalrulesLeaveapprovalcriteria",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

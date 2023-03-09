@@ -1,0 +1,67 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173247",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "leave_detail_adjustment_logs",
+  "fields": [
+    {
+      "fieldName": "action",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "count",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "quotaBeforeAdjustment",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "quotaAfterAdjustment",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "LeaveDetailAdjustmentLogs",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "leaveDetails",
+      "otherEntityRelationshipName": "leavedetailadjustmentlogsLeavedetail",
+      "relationshipName": "leaveDetail",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "leavedetailadjustmentlogsAdjustedby",
+      "relationshipName": "adjustedBy",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

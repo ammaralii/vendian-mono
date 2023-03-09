@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173205",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "designation_job_descriptions",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "DesignationJobDescriptions",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "documents",
+      "otherEntityRelationshipName": "designationjobdescriptionsDocument",
+      "relationshipName": "document",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "designations",
+      "otherEntityRelationshipName": "designationjobdescriptionsDesignation",
+      "relationshipName": "designation",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "jobdescription",
+      "relationshipName": "employeejobinfoJobdescription",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

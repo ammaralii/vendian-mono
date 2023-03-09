@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity LeaveRequests.
+    -->
+    <changeSet id="20230309173253-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="leave_detail_id"
+                                 baseTableName="leave_requests"
+                                 constraintName="fk_leave_requests__leave_detail_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_details"/>
+
+        <addForeignKeyConstraint baseColumnNames="leave_status_id"
+                                 baseTableName="leave_requests"
+                                 constraintName="fk_leave_requests__leave_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_statuses"/>
+
+        <addForeignKeyConstraint baseColumnNames="parent_leave_request_id"
+                                 baseTableName="leave_requests"
+                                 constraintName="fk_leave_requests__parent_leave_request_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_requests"/>
+    </changeSet>
+</databaseChangeLog>

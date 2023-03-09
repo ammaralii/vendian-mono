@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity LeaveRequestsOlds.
+    -->
+    <changeSet id="20230309173254-1" author="jhipster">
+        <createTable tableName="leave_requests_olds">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="startdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="enddate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="requesternote" type="varchar(65535)">
+                <constraints nullable="true" />
+            </column>
+            <column name="managernote" type="varchar(65535)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currentstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="leavescanceled" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="requestdate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="linkstring" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="linkused" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="ishalfday" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="actiondate" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="lmstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pmstatus" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="isbench" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="isescalated" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="iscommented" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="isreminded" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="isnotified" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="isremindedhr" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="isdm" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="leavetype_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="manager_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="employee_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="startdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="enddate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="requestdate" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leave_requests_olds" columnName="actiondate" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173254-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/leave_requests_olds.csv"
+                  separator=";"
+                  tableName="leave_requests_olds"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="startdate" type="date"/>
+            <column name="enddate" type="date"/>
+            <column name="requesternote" type="string"/>
+            <column name="managernote" type="string"/>
+            <column name="currentstatus" type="string"/>
+            <column name="leavescanceled" type="boolean"/>
+            <column name="requestdate" type="date"/>
+            <column name="linkstring" type="string"/>
+            <column name="linkused" type="boolean"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <column name="ishalfday" type="boolean"/>
+            <column name="actiondate" type="date"/>
+            <column name="lmstatus" type="string"/>
+            <column name="pmstatus" type="string"/>
+            <column name="isbench" type="boolean"/>
+            <column name="isescalated" type="boolean"/>
+            <column name="iscommented" type="boolean"/>
+            <column name="isreminded" type="boolean"/>
+            <column name="isnotified" type="boolean"/>
+            <column name="isremindedhr" type="boolean"/>
+            <column name="isdm" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

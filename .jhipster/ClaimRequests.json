@@ -1,0 +1,87 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173148",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "claim_requests",
+  "fields": [
+    {
+      "fieldName": "projectid",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "amountreleased",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "manager",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ClaimRequests",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "claimrequestsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "claimApprovers",
+      "otherEntityRelationshipName": "claimrequest",
+      "relationshipName": "claimapproversClaimrequest",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "claimDetails",
+      "otherEntityRelationshipName": "claimrequest",
+      "relationshipName": "claimdetailsClaimrequest",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "claimImages",
+      "otherEntityRelationshipName": "claimrequest",
+      "relationshipName": "claimimagesClaimrequest",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

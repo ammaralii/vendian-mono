@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173216",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_documents",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeDocuments",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "documents",
+      "otherEntityRelationshipName": "employeedocumentsDocument",
+      "relationshipName": "document",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeedocumentsEmployee",
+      "relationshipName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173332",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "rater_attribute_mappings",
+  "fields": [
+    {
+      "fieldName": "effdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "enddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "RaterAttributeMappings",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "raterAttributes",
+      "otherEntityRelationshipName": "raterattributemappingsRaterattribute",
+      "relationshipName": "raterattribute",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "raterattributemappingsAttributesfor",
+      "relationshipName": "attributesFor",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "attributes",
+      "otherEntityRelationshipName": "raterattributemappingsAttributesby",
+      "relationshipName": "attributesBy",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "ratingAttributes",
+      "otherEntityRelationshipName": "raterattributemapping",
+      "relationshipName": "ratingattributesRaterattributemapping",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserAttributeApprovalRules.
+    -->
+    <changeSet id="20230309173348-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="attribute_id"
+                                 baseTableName="user_attribute_approval_rules"
+                                 constraintName="fk_user_attribute_approval_rules__attribute_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="attributes"/>
+
+        <addForeignKeyConstraint baseColumnNames="leave_approval_criteria_id"
+                                 baseTableName="user_attribute_approval_rules"
+                                 constraintName="fk_user_attribute_approval_rules__leave_approval_criteria_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_approval_criterias"/>
+    </changeSet>
+</databaseChangeLog>

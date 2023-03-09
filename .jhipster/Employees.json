@@ -1,0 +1,669 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173230",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employees",
+  "fields": [
+    {
+      "fieldName": "firstname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "phonenumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "dateofbirth",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "skype",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "employeeDesignation",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "joiningdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "leavingdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "isactive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "googleid",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "oracleid",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "deptt",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "genderid",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "6"
+    },
+    {
+      "fieldName": "onprobation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "employeeCompetency",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "resourcetype",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "12"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "subgrade",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "imageurl",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "resignationdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "graduationdate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "careerstartdate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "externalexpyears",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "externalexpmonths",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "placeofbirth",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "hireddate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lasttrackingupdate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "middlename",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "grosssalary",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "fuelallowance",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "mobilenumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "resignationtype",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "primaryreasonforleaving",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "secondaryreasonforleaving",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "noticeperiodduration",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "noticeperiodserved",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "probationperiodduration",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Employees",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "locations",
+      "otherEntityRelationshipName": "employeesLocation",
+      "relationshipName": "location",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "roles",
+      "otherEntityRelationshipName": "employeesRole",
+      "relationshipName": "role",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "employeesManager",
+      "relationshipName": "manager",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "leavesOlds",
+      "otherEntityRelationshipName": "employeesLeave",
+      "relationshipName": "leave",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "departments",
+      "otherEntityRelationshipName": "employeesDepartment",
+      "relationshipName": "department",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "businessUnits",
+      "otherEntityRelationshipName": "employeesBusinessunit",
+      "relationshipName": "businessunit",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "divisions",
+      "otherEntityRelationshipName": "employeesDivision",
+      "relationshipName": "division",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "competencies",
+      "otherEntityRelationshipName": "employeesCompetency",
+      "relationshipName": "competency",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "employmentStatuses",
+      "otherEntityRelationshipName": "employeesEmploymentstatus",
+      "relationshipName": "employmentstatus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "employmentTypes",
+      "otherEntityRelationshipName": "employeesEmploymenttype",
+      "relationshipName": "employmenttype",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "designations",
+      "otherEntityRelationshipName": "employeesDesignation",
+      "relationshipName": "designation",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "claimRequestViews",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "claimrequestviewsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "claimRequests",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "claimrequestsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dealResources",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "dealresourcesEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeAddresses",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeaddressesEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeBirthdays",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeebirthdaysEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeCertificates",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeecertificatesEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeComments",
+      "otherEntityRelationshipName": "commenter",
+      "relationshipName": "employeecommentsCommenter",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeComments",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeecommentsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeCompensation",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeecompensationEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeContacts",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeecontactsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeDetails",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeedetailsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeDocuments",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeedocumentsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeEducation",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeeducationEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeEmergencyContacts",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeemergencycontactsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeFamilyInfo",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeefamilyinfoEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeejobinfoEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "reviewmanager",
+      "relationshipName": "employeejobinfoReviewmanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeJobInfo",
+      "otherEntityRelationshipName": "manager",
+      "relationshipName": "employeejobinfoManager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProfileHistoryLogs",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeprofilehistorylogsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjectRatings",
+      "otherEntityRelationshipName": "projectarchitect",
+      "relationshipName": "employeeprojectratingsProjectarchitect",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjectRatings",
+      "otherEntityRelationshipName": "projectmanager",
+      "relationshipName": "employeeprojectratingsProjectmanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjectRatings",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeprojectratingsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjects",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeprojectsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeProjects",
+      "otherEntityRelationshipName": "assignor",
+      "relationshipName": "employeeprojectsAssignor",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeSkills",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeskillsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeTalents",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeetalentsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employeeWorks",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employeeworksEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employees",
+      "otherEntityRelationshipName": "manager",
+      "relationshipName": "employeesManager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "employmentHistory",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "employmenthistoryEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedbackQuestions",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "feedbackquestionsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedbackRequests",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "feedbackrequestsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedbackRequests",
+      "otherEntityRelationshipName": "linemanager",
+      "relationshipName": "feedbackrequestsLinemanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedbackRespondents",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "feedbackrespondentsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "interviews",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "interviewsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveDetailAdjustmentLogs",
+      "otherEntityRelationshipName": "adjustedBy",
+      "relationshipName": "leavedetailadjustmentlogsAdjustedby",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestApprovers",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "leaverequestapproversUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestsOlds",
+      "otherEntityRelationshipName": "manager",
+      "relationshipName": "leaverequestsoldsManager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaveRequestsOlds",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "leaverequestsoldsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "leaves",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "leavesUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "notificationSentEmailLogs",
+      "otherEntityRelationshipName": "recipient",
+      "relationshipName": "notificationsentemaillogsRecipient",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pcRatings",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "pcratingsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pcRatingsTrainings",
+      "otherEntityRelationshipName": "successorFor",
+      "relationshipName": "pcratingstrainingsSuccessorfor",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "performanceCycleEmployeeRating",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "performancecycleemployeeratingEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "performanceCycleEmployeeRating",
+      "otherEntityRelationshipName": "manager",
+      "relationshipName": "performancecycleemployeeratingManager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "allowedafterduedateby",
+      "relationshipName": "projectcyclesAllowedafterduedateby",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "architect",
+      "relationshipName": "projectcyclesArchitect",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectCycles",
+      "otherEntityRelationshipName": "projectmanager",
+      "relationshipName": "projectcyclesProjectmanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projectLeadership",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "projectleadershipEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projects",
+      "otherEntityRelationshipName": "projectmanager",
+      "relationshipName": "projectsProjectmanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "ratings",
+      "otherEntityRelationshipName": "rater",
+      "relationshipName": "ratingsRater",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userAttributes",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "userattributesUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userGoals",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "usergoalsUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatings",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "userratingsUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatings",
+      "otherEntityRelationshipName": "reviewManager",
+      "relationshipName": "userratingsReviewmanager",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRatingsRemarks",
+      "otherEntityRelationshipName": "rater",
+      "relationshipName": "userratingsremarksRater",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRelations",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "userrelationsUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userRelations",
+      "otherEntityRelationshipName": "relatedUser",
+      "relationshipName": "userrelationsRelateduser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "workLogs",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "worklogsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "zemployeeprojectsEmployee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "assignor",
+      "relationshipName": "zemployeeprojectsAssignor",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "projectmanager",
+      "relationshipName": "zemployeeprojectsProjectmanager",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

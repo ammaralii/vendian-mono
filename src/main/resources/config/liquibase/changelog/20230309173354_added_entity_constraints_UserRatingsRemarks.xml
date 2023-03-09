@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserRatingsRemarks.
+    -->
+    <changeSet id="20230309173354-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="designation_after_promotion_id"
+                                 baseTableName="user_ratings_remarks"
+                                 constraintName="fk_user_ratings_remarks__designation_after_promotion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="designations"/>
+
+        <addForeignKeyConstraint baseColumnNames="designation_after_redesignation_id"
+                                 baseTableName="user_ratings_remarks"
+                                 constraintName="fk_user_ratings_remarks__designation_after_redesignation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="designations"/>
+
+        <addForeignKeyConstraint baseColumnNames="rater_id"
+                                 baseTableName="user_ratings_remarks"
+                                 constraintName="fk_user_ratings_remarks__rater_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employees"/>
+
+        <addForeignKeyConstraint baseColumnNames="pc_employee_rating_id"
+                                 baseTableName="user_ratings_remarks"
+                                 constraintName="fk_user_ratings_remarks__pc_employee_rating_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="performance_cycle_employee_rating"/>
+    </changeSet>
+</databaseChangeLog>

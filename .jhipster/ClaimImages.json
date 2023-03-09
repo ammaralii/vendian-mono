@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173146",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "claim_images",
+  "fields": [
+    {
+      "fieldName": "images",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ClaimImages",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "claimRequests",
+      "otherEntityRelationshipName": "claimimagesClaimrequest",
+      "relationshipName": "claimrequest",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

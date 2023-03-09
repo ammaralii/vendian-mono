@@ -1,0 +1,59 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173351",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_goal_rater_attributes",
+  "fields": [
+    {
+      "fieldName": "ugraRating",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "UserGoalRaterAttributes",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "pcRatings",
+      "otherEntityRelationshipName": "usergoalraterattributesRating",
+      "relationshipName": "rating",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "userGoals",
+      "otherEntityRelationshipName": "usergoalraterattributesUsergoal",
+      "relationshipName": "usergoal",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

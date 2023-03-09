@@ -1,0 +1,29 @@
+{
+  "applications": "*",
+  "changelogDate": "20230309173234",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "events",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Events",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "zEmployeeProjects",
+      "otherEntityRelationshipName": "event",
+      "relationshipName": "zemployeeprojectsEvent",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity LeaveRequestApproverFlows.
+    -->
+    <changeSet id="20230309173251-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="approver_status_id"
+                                 baseTableName="leave_request_approver_flows"
+                                 constraintName="fk_leave_request_approver_flows__approver_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_statuses"/>
+
+        <addForeignKeyConstraint baseColumnNames="current_leave_request_status_id"
+                                 baseTableName="leave_request_approver_flows"
+                                 constraintName="fk_leave_request_approver_flows__current_leave_request_sta_cb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_statuses"/>
+
+        <addForeignKeyConstraint baseColumnNames="next_leave_request_status_id"
+                                 baseTableName="leave_request_approver_flows"
+                                 constraintName="fk_leave_request_approver_flows__next_leave_request_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="leave_statuses"/>
+    </changeSet>
+</databaseChangeLog>

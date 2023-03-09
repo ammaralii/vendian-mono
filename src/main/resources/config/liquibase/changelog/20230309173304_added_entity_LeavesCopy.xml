@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity LeavesCopy.
+    -->
+    <changeSet id="20230309173304-1" author="jhipster">
+        <createTable tableName="leaves_copy">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="annualtotal" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="annualused" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="annualadjustments" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="casualtotal" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="casualused" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sicktotal" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sickused" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="annualtotalnextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="annualusednextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="casualtotalnextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="casualusednextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sicktotalnextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sickusednextyear" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="carryforward" type="decimal(21,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="leaves_copy" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="leaves_copy" columnName="updatedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20230309173304-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/leaves_copy.csv"
+                  separator=";"
+                  tableName="leaves_copy"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="annualtotal" type="numeric"/>
+            <column name="annualused" type="numeric"/>
+            <column name="annualadjustments" type="numeric"/>
+            <column name="casualtotal" type="numeric"/>
+            <column name="casualused" type="numeric"/>
+            <column name="sicktotal" type="numeric"/>
+            <column name="sickused" type="numeric"/>
+            <column name="annualtotalnextyear" type="numeric"/>
+            <column name="annualusednextyear" type="numeric"/>
+            <column name="casualtotalnextyear" type="numeric"/>
+            <column name="casualusednextyear" type="numeric"/>
+            <column name="sicktotalnextyear" type="numeric"/>
+            <column name="sickusednextyear" type="numeric"/>
+            <column name="carryforward" type="numeric"/>
+            <column name="createdat" type="date"/>
+            <column name="updatedat" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
